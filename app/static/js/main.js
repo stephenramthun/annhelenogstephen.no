@@ -117,7 +117,7 @@ function submitAnswerForm(form) {
         if (event.target.status == 200) {
             var rsvp = document.getElementById("rsvp");
             removeAllChildren(rsvp);
-            rsvp.innerHTML = "<h1>RSVP</h1><p>" + event.target.responseText + "</p>";
+            rsvp.innerHTML = event.target.responseText;
 
             var form = document.getElementById("register_form");
             if (form) {

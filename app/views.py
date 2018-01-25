@@ -88,7 +88,7 @@ def answer():
         db.session.commit()
 
         loc = translator.get_localized_dict(current_user.language)
-        return loc['reg_answer_3']
+        return '<p>' + loc['reg_answer_3'] + '</p>'
 
     else:
         # none chosen, notify user of error
@@ -144,7 +144,7 @@ def delete():
         if food_choice:
             db.session.delete(food_choice)
             db.session.commit()
-        
+
         db.session.delete(person)
         db.session.commit()
         return 'deleted'
