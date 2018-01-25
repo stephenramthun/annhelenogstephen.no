@@ -1,0 +1,134 @@
+{% extends 'index.html' %}
+{% block content %}
+<div id="content-offset"></div>
+<div class="sea"></div>
+<div id="content-wrapper">
+    <div class="container">
+        <div class="intro">
+            <p>{{ loc['header1'] }}<br>{{ loc['header2'] }}</p>
+            <p><h3>{{ invite_text }}</h3></p>
+            <p>{{ loc['header3'] }}<br>{{ loc['header4'] }}</p>
+            <p>{{ loc['header5'] }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="title">{{ loc['program_header'] }}</h3>
+        <ul>
+            <li><a>{{ loc['program_body_1'] }}</a></li>
+            <li><a>{{ loc['program_body_2'] }}</a></li>
+            <li><a>{{ loc['program_body_3'] }}</a></li>
+            <li><a>{{ loc['program_body_4'] }}</a></li>
+            <li><a>{{ loc['program_body_5'] }}</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h3 class="title">{{ loc['wedding_header'] }}</h3>
+        <p>{{ loc['wedding_body'] }}</p>
+    </div>
+    <div class="container">
+        <h3 class="title">{{ loc['reception_header'] }}</h3>
+        <p>{{ loc['reception_body_1'] }}</p>
+        <p>{{ loc['reception_body_2'] }}</p>
+    </div>
+    <div class="container">
+        <h3 class="title">{{ loc['accomodation_header'] }}</h3>
+        <p>{{ loc['accomodation_body'] }}</p>
+    </div>
+    <div class="container">
+        <h3 class="title">{{ loc['gifts_header'] }}</h3>
+        <p>{{ loc['gifts_body'] }}</p>
+    </div>
+    <div id="rsvp" class="container rsvp">
+        <h1>RSVP</h1>
+        {% if accepted and answered %}
+        <!-- ACCEPTED INVITATION -->
+        <p>{{ loc['reg_answer_1'] }}</p>
+        <p>{{ loc['reg_answer_2'] }}</p>
+        <div>
+            <a>{{ loc['reg'] }}</a>
+            {% if registered %}
+            <ul id="reg_list">
+                {% for person in registered %}
+                <li>{{ person }} <a id="{{ person }}" onclick="javascript:deleteParticipant(this.id)">x</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div>
+            <a>{{ loc['reg_8'] }}</a>
+            <form id="register_form" action="/register" method="post">
+                {{ form.hidden_tag() }}
+                <p>{{ form.first_name(placeholder = loc['reg_1']) }}</p>
+                <p>{{ form.last_name(placeholder = loc['reg_2']) }}</p>
+                <p>{{ form.allergies(placeholder = loc['reg_3']) }}</p>
+                <p>{{ form.vegetarian() }} {{ loc['reg_4'] }}</p>
+                <p>{{ form.vegan() }} {{ loc['reg_5'] }}</p>
+                <p>{{ form.kids_menu() }} {{ loc['reg_6'] }}</p>
+                <input type="submit" value="{{ loc['reg_9'] }}">
+            </form>
+        </div>
+        {% elif answered %}
+        <!-- REJECTED INVITATION -->
+        <p>{{ loc['reg_answer_3'] }}</p>
+        {% else %}
+        <!-- INVITATION NOT ANSWERED -->
+        <form id="answer" action="/answer" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.answer() }}
+            <input type="submit" value="Submit">
+        </form>
+        {% endif %}
+    </div>
+</div>
+<div class="footer">
+    <h3 class="title">KONTAKT</h3>
+    <div class="contact">
+        <div>
+            <p>{{ loc['contact_1'] }}:</p>
+        </div>
+        <div>
+            <p>Ann Helen Brendehaug</p>
+            <p>{{ loc['contact_5'] }}: annhelen@bokvennen.no</p>
+            {% if lang == 'NO' %}
+            <p>Telefon: 123 45 678</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="contact">
+        <div>
+            <p>{{ loc['contact_2'] }}:</p>
+        </div>
+        <div>
+            <p>Stephen Andrew Ramthun</p>
+            <p>{{ loc['contact_5'] }}: stephenramthun@gmail.com</p>
+            {% if lang == 'NO' %}
+            <p>Telefon: 454 63 747</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="contact">
+        <div>
+            <p>{{ loc['contact_3'] }}:</p>
+        </div>
+        <div>
+            <p>Miriam Mackmin</p>
+            <p>{{ loc['contact_5'] }}: adresse@domene.no</p>
+            {% if lang == 'NO' %}
+            <p>Telefon: 123 45 678</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="contact">
+        <div>
+            <p>{{ loc['contact_4'] }} / toastmaster:</p>
+        </div>
+        <div>
+            <p>William Morris</p>
+            <p>{{ loc['contact_5'] }}: wmorris@live.no</p>
+            {% if lang == 'NO' %}
+            <p>Telefon: 123 45 678</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

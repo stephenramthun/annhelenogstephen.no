@@ -1,0 +1,10 @@
+__pycache__/
+app/__pycache__/
+share/
+bin/
+include/
+lib/
+.DS_Store
+.DS_Store?
+.Python
+pip-selfcheck.json

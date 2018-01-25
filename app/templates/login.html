@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block content %}
+<div id="login-wrapper">
+    <h3>ANN HELEN</h3>
+    <h3>+</h3>
+    <h3>STEPHEN</h3>
+    <p>Vennligst tast inn din invitasjonskode / Please enter your invitation code</p>
+    <div>
+        {% if error %}
+        <a class="error">Ugyldig kode / Invalid code</a>
+        {% endif %}
+        {% if form %}
+        <form action="/" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.passkey() }}
+            <input type="submit" value="Login">
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
