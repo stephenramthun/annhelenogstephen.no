@@ -141,8 +141,10 @@ def delete():
 
     if person:
         food_choice = models.FoodChoice.query.filter_by(person = person.id).first()
-        db.session.delete(food_choice)
-        db.session.commit()
+        if food_choice:
+            db.session.delete(food_choice)
+            db.session.commit()
+        
         db.session.delete(person)
         db.session.commit()
         return 'deleted'
