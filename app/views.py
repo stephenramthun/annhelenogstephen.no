@@ -88,7 +88,7 @@ def answer():
         db.session.commit()
 
         loc = translator.get_localized_dict(current_user.language)
-        return '<p>' + loc['reg_answer_3'] + '</p>'
+        return '<h1>RSVP</h1><p>' + loc['reg_answer_3'] + '</p>'
 
     else:
         # none chosen, notify user of error
