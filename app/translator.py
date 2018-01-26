@@ -56,6 +56,7 @@ class Translator():
                 'reg_9': 'Add',
 
                 # Contact
+                'contact_0': 'CONTACT',
                 'contact_1': 'Bride',
                 'contact_2': 'Groom',
                 'contact_3': 'Maid of honor',
@@ -116,6 +117,7 @@ class Translator():
                 'reg_9': 'Legg til',
 
                 # Contact
+                'contact_0': 'KONTAKT',
                 'contact_1': 'Brud',
                 'contact_2': 'Brudgom',
                 'contact_3': 'Brudens forlover',
