@@ -1,7 +1,7 @@
 from app import app, models, db, translator
-from flask import Flask, render_template, redirect, request, url_for, abort
+from flask import Flask, render_template, redirect, request, abort
 from .forms import LoginForm, RegisterForm, AnswerForm
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, login_user, login_required, current_user
 
 login_manager = LoginManager()
 login_manager.init_app(app)
