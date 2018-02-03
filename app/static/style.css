@@ -167,7 +167,7 @@ ul {
 }
 
 .sky {
-    background-color: #FFB1B1;
+    background-color: #ffb1b1;
     height: 500px;
 }
 
@@ -183,12 +183,23 @@ ul {
 
 #banner {
     position: fixed;
-    width: 300px;
-    height: auto;
-    top: 50px;
+    width: 210px;
+    height: 210px;
+    background-color: white;
+    top: 100px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) rotate(45deg);
     z-index: 2;
+}
+
+#banner-title {
+    position: absolute;
+    color: black;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .rsvp {

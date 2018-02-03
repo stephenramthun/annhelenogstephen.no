@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
 
-    drawMountains("#7A5353", [100, 150, 200]);
-    drawMountains("#493640", [50, 100, 150, 200, 250]);
+    drawMountains("#ad778e", [100, 150, 200]);
+    drawMountains("#65455d", [50, 100, 150, 200, 250]);
     drawSideMountains();
 });
 
@@ -35,7 +35,7 @@ function setSubmitAction(form, func) {
 
 function drawSideMountains() {
     var canvases = document.getElementsByClassName("side-mountain");
-    var color = "#32282D";
+    var color = "#432e3e";
     var width = 500;
 
     for (var i = 0; i < canvases.length; i++) {
