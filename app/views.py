@@ -1,6 +1,6 @@
 from app import app, models, db, translator
 from flask import Flask, render_template, redirect, request, abort
-from .forms import LoginForm, RegisterForm, AnswerForm
+from .forms import LoginForm, RegisterForm, AnswerForm, EmailForm
 from flask_login import LoginManager, login_user, login_required, current_user
 
 login_manager = LoginManager()
@@ -63,7 +63,9 @@ def main():
                            answered = answered,
                            form = form,
                            loc = loc,
-                           lang = current_user.language)
+                           lang = current_user.language,
+                           email_form = EmailForm(),
+                           email = user.email)
 
 @app.route('/answer', methods = ['POST'])
 @login_required
@@ -148,6 +150,19 @@ def delete():
         db.session.delete(person)
         db.session.commit()
         return 'deleted'
+
+    return abort(400)
+
+@app.route('/email', methods=['POST'])
+@login_required
+def email():
+    form = EmailForm(request.form)
+
+    if form.validate_on_submit():
+        user = models.User.query.filter_by(user_id = current_user.user_id).first()
+        user.email = form.email.data
+        db.session.commit()
+        return 'successfully added {}'.format(user.email)
 
     return abort(400)
 

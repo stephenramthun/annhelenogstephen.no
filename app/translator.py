@@ -43,6 +43,9 @@ class Translator():
                 'reg_answer_1': 'Thanks! We are looking forward to seeing you there!',
                 'reg_answer_2': 'Please enter names and details of the people who are coming below.',
                 'reg_answer_3': 'Thank you for answering. We hope to see you soon.',
+                'reg_answer_4': 'Please enter an email address in case we need to reach you:',
+                'reg_answer_5': 'Your registered email address:',
+                'reg_answer_6': 'Change email:',
 
                 # Register
                 'reg_1': 'Given names',
@@ -104,6 +107,9 @@ class Translator():
                 'reg_answer_1': 'Takk for svaret! Vi gleder oss til å se deg!',
                 'reg_answer_2': 'Legg til navn og detaljer om deltakerne som kommer fra dere nedenfor.',
                 'reg_answer_3': 'Takk for svaret. Håper vi sees snart.',
+                'reg_answer_4': 'Vennligst oppgi en epostadresse slik at vi kan nå dere:',
+                'reg_answer_5': 'Din registrerte epostadresse:',
+                'reg_answer_6': 'Endre din registrerte epost:',
 
                 # Register
                 'reg_1': 'Fornavn',

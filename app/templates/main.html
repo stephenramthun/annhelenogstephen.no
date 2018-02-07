@@ -43,6 +43,16 @@
         {% if accepted and answered %}
         <!-- ACCEPTED INVITATION -->
         <p>{{ loc['reg_answer_1'] }}</p>
+        {% if email %}
+        <p>{{ loc['reg_answer_5'] }} <a id="registered_email">{{ email }}</a></p>
+        <p>{{ loc['reg_answer_6'] }}</p>
+        {% else %}
+        <p>{{ loc['reg_answer_4'] }}</p>
+        {% endif %}
+        <form id="email_form" action="/email" method="post">
+            {{ email_form.hidden_tag() }}
+            <p>{{ email_form.email(placeholder = loc['contact_5']) }}<input type="submit" value="{{ loc['reg_9'] }}"</p>
+        </form>
         <p>{{ loc['reg_answer_2'] }}</p>
         <div>
             <a>{{ loc['reg'] }}</a>

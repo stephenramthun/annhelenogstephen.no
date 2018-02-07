@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
+    var email_form = document.getElementById("email_form");
+    if (email_form) {
+        setSubmitAction(email_form, submitEmailForm);
+    }
+
     var canvas = document.getElementById("mountains");
     var width = Math.max(screen.width, screen.height);
     var height = 150;
@@ -145,6 +150,12 @@ function submitRegisterForm(form) {
     formData.append("kids_menu", form.kids_menu.checked);
 
     request.addEventListener("load", function(event) {
+        // Remove errors.
+        var errors = document.getElementsByClassName("error");
+        for (var i = 0; i < errors.length; i++) {
+            errors[i].parentElement.removeChild(errors[i]);
+        }
+
         if (event.target.status == 200) {
             var response = event.target.responseText;
             var reg_list = document.getElementById("reg_list");
@@ -156,12 +167,6 @@ function submitRegisterForm(form) {
 
             form.reset();
 
-            // Remove errors.
-            var errors = document.getElementsByClassName("error");
-            for (var i = 0; i < errors.length; i++) {
-                errors[i].parentElement.removeChild(errors[i]);
-            }
-
         } else if (event.target.status == 400) {
             var message = "Vennligst fyll ut fornavn og etternavn / Please provide given names and family name.";
             addMessage(form, "error", message);
@@ -169,6 +174,38 @@ function submitRegisterForm(form) {
     });
 
     request.open("POST", "/register");
+    request.send(formData);
+}
+
+function submitEmailForm(form) {
+    var request = new XMLHttpRequest();
+    var formData = new FormData();
+
+    formData.append("csrf_token", form.csrf_token.value);
+    formData.append("email", form.email.value);
+
+    request.addEventListener("load", function(event) {
+        // Remove errors.
+        var errors = document.getElementsByClassName("error");
+        for (var i = 0; i < errors.length; i++) {
+            errors[i].parentElement.removeChild(errors[i]);
+        }
+
+        if (event.target.status == 200) {
+            var response = event.target.responseText;
+            var email = document.getElementById("registered_email");
+            if (email) {
+                email.innerHTML = form.email.value;
+            }
+            form.reset();
+            location.reload();
+        } else if (event.target.status == 400) {
+            var message = "Feil i epost / Error in email";
+            addMessage(form, "error", message);
+        }
+    });
+
+    request.open("POST", "/email");
     request.send(formData);
 }
 

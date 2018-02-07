@@ -5,6 +5,7 @@ class User(db.Model):
     invite_text = db.Column(db.String(60), nullable = False)
     language = db.Column(db.String(2), nullable = False)
     answer = db.Column(db.Boolean())
+    email = db.Column(db.String(50))
 
     def __init__(self, user_id, invite_text, language):
         self.user_id = user_id
