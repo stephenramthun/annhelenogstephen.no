@@ -38,7 +38,7 @@ class Translator():
 
                 # Accomodation
                 'accomodation_header': 'ACCOMODATION',
-                'accomodation_body': 'We are glad to help you with accomodations and we have reserved rooms at Tørvis from Friday the 10th. Send Ann Helen an email at annhelen@bokvennen.no if you would like to make use of the reservation.',
+                'accomodation_body': 'We are glad to help you with accomodations and we have reserved rooms at Tørvis from Friday the 10th. Send Ann Helen an email at annhelen@bokvennen.no if you would like to make use of the reservation. A double room is approximately 1500-1600 NOK per night.',
 
                 # Gifts
                 'gifts_header': 'GIFTS',
@@ -111,7 +111,7 @@ class Translator():
 
                 # Accomodation
                 'accomodation_header': 'OVERNATTING',
-                'accomodation_body': 'Vi hjelper dykk gjerne med å finne overnatting og har reservert rom på Tørvis og Hofslund hotell frå fredag 10. august. Ta kontakt på annhelen@bokvennen.no om de ynskjer å benytte dykk av reservasjonen.',
+                'accomodation_body': 'Vi hjelper dykk gjerne med å finne overnatting og har reservert rom på Tørvis og Hofslund hotell frå fredag 10. august. Ta kontakt på annhelen@bokvennen.no om de ynskjer å benytte dykk av reservasjonen. Overnatting kostar mellom 1500-1600 kr for eit dobbeltrom pr. natt.',
 
                 # Gifts
                 'gifts_header': 'GAVER',
