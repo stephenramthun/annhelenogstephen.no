@@ -59,6 +59,14 @@ ul {
     padding: 0;
 }
 
+a:link {
+    color: #ffb1b1;
+}
+
+a:visited {
+    color: #ffb1b1;
+}
+
 #mountains {
     position: absolute;
     left: 50%;
