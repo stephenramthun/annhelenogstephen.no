@@ -81,6 +81,8 @@ def answer():
         registered = models.Person.query.filter_by(user_id = current_user.user_id)
 
         return render_template('register.html',
+                               email_form = EmailForm(),
+                               email = user.email,
                                form = RegisterForm(),
                                loc = loc,
                                registered = registered)

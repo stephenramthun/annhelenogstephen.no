@@ -115,7 +115,7 @@ class Translator():
 
                 # Gifts
                 'gifts_header': 'GAVER',
-                'gifts_body': 'Vi ynskjer fyrst og fremst å samle familie og vener på dagen vår og tykkjer ikkje gåver er viktig. Om de likevel vil gje oss noko, likar vi gjenbruk og har de ein ting av retro årgang, som de tenkjer vil få eit nytt liv hjå oss, er det storarta! Elles finn de ei ynskjeliste på Kitchn sine nettsider under fana "Bryllup - finn liste". Vi ynskjer oss òg pengar til bryllaupsreise.',
+                'gifts_body': 'Vi ynskjer fyrst og fremst å samle familie og vener på dagen vår og tykkjer ikkje gåver er viktig. Om de likevel vil gje oss noko, likar vi gjenbruk og har de ein ting av retro årgang, som de tenkjer vil få eit nytt liv hjå oss, er det storarta! Elles finn de ei ynskjeliste på Christiania Glasmagasin sine nettsider som er lenka under. Vi ynskjer oss òg pengar til oppussing av kjøkken.',
 
                 # RSVP
                 'rsvp_1': 'Vi vil gjerne kome.',
