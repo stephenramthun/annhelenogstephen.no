@@ -128,6 +128,11 @@ function submitAnswerForm(form) {
             if (form) {
                 setSubmitAction(form, submitRegisterForm);
             }
+
+            var email_form = document.getElementById("email_form");
+            if (email_form) {
+                setSubmitAction(email_form, submitEmailForm);
+            }
         } else {
             console.log("Response", event.target.status);
         }
